@@ -1,0 +1,31 @@
+## Import module
+import os
+import numpy as np
+import csv
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
+import math
+import time
+import tensorflow as tf
+from tensorflow.keras.layers import GRU, LSTM, Bidirectional, Dense, Flatten, Conv1D, BatchNormalization, LeakyReLU, Dropout
+from tensorflow.keras import Sequential
+from tensorflow.keras.utils import plot_model
+from pickle import load
+from sklearn.metrics import mean_squared_error
+from tqdm import tqdm
+import statsmodels.api as sm
+from math import sqrt
+from datetime import datetime, timedelta
+from sklearn.preprocessing import MinMaxScaler
+from pickle import dump
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+import warnings
+warnings.filterwarnings("ignore")
+
+## Load Data
+stock_name = 'TSLA'
+all_tweets = pd.read_csv('stock_tweets.csv')
+df = all_tweets[all_tweets['Stock Name'] == stock_name]
